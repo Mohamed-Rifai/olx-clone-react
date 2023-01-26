@@ -28,6 +28,10 @@
   border-color: #23e5db;
   outline-color: #23e5db;
 }
+.login, .logout:hover{
+  cursor: pointer;
+}
+
 
 .placeSearch input {
   border-color: transparent;
