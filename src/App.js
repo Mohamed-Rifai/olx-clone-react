@@ -4,7 +4,10 @@ import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Home from './Pages/Home';
 import Create from './Pages/Create'
+import View from './Pages/ViewPost'
 import {AuthContext, FirebaseContext} from './store/Context'
+import { postContext } from './store/PostContext';
+
 import './App.css';
 
 /**
@@ -14,7 +17,7 @@ import './App.css';
 function App() {
   const {setUser} = useContext(AuthContext)
   const {firebase} = useContext(FirebaseContext)
-
+  // const {postDetails} = useContext(postContext)
   useEffect(()=>{
   firebase.auth().onAuthStateChanged((user)=>{
     setUser(user)
@@ -23,6 +26,7 @@ function App() {
  
   return (
     <div>
+     
       <Router>
         <Route exact path='/'>
       <Home />
@@ -36,7 +40,11 @@ function App() {
         <Route path='/create'>
       <Create/>
         </Route>
+        <Route path='/view'>
+          <View/>
+        </Route>
       </Router>
+     
     </div>
   );
 }

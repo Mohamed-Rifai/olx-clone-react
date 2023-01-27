@@ -53,10 +53,10 @@ function Header() {
         
         <div className="sellMenu">
           <SellButton></SellButton>
-          <div onClick={()=>history.push('create')} className="sellMenuContent">
+          <div onClick={user? ()=>history.push('create'):()=>history.push('login')} className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
             <span>SELL</span>
-          </div>
+          </div>  
         </div>
       </div>
     </div>
